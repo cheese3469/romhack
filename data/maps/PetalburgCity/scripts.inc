@@ -25,7 +25,7 @@ PetalburgCity_EventScript_SetGymDoorsUnlocked::
 	return
 
 PetalburgCity_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
+	//map_script_2 VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
 	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
 	.2byte 0
 
@@ -552,14 +552,49 @@ PetalburgCity_EventScript_Scott::
 	delay 30
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
 	closemessage
+	playbgm MUS_ENCOUNTER_INTENSE, TRUE
+ 	goto_if_eq VAR_STARTER_MON, 0, PetalburgCity_EventScript_StartScottBattleTreecko
+ 	goto_if_eq VAR_STARTER_MON, 1, PetalburgCity_EventScript_StartScottBattleTorchic
+ 	goto_if_eq VAR_STARTER_MON, 2, PetalburgCity_EventScript_StartScottBattleMudkip
+	releaseall
+	end
+
+PetalburgCity_EventScript_StartScottBattleTreecko::
+	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_TREECKO, PetalburgCity_Text_ScottPostBattle
+	fadedefaultbgm
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
 	removeobject LOCALID_PETALBURG_SCOTT
-	releaseall
-	end
+	return
+
+PetalburgCity_EventScript_StartScottBattleTorchic::
+	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_TORCHIC, PetalburgCity_Text_ScottPostBattle
+	fadedefaultbgm
+	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
+	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
+	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
+	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
+	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
+	removeobject LOCALID_PETALBURG_SCOTT
+	return
+
+PetalburgCity_EventScript_StartScottBattleMudkip::
+	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_MUDKIP, PetalburgCity_Text_ScottPostBattle
+	fadedefaultbgm
+	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
+	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
+	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
+	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
+	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
+	removeobject LOCALID_PETALBURG_SCOTT
+	return
+
+PetalburgCity_Text_ScottPostBattle:
+	.string "What a battle! You might have what\n"
+	.string "it takes after all. See you later!$"
 
 PetalburgCity_EventScript_ScottExit0::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit0
@@ -757,4 +792,5 @@ PetalburgCity_Text_WellMaybeNot:
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "We'll battle to see if you meet\n"
+	.string "the criteria.$"

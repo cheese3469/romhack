@@ -99,7 +99,6 @@ PetalburgWoods_EventScript_BagFull::
 	end
 
 PetalburgWoods_EventScript_DevonResearcherFinish::
-	msgbox PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro, MSGBOX_DEFAULT
 	applymovement LOCALID_PETALBURG_WOODS_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherStartExit
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ICantBeWastingTime, MSGBOX_DEFAULT
@@ -275,44 +274,9 @@ PetalburgWoods_EventScript_Lyle::
 	end
 
 PetalburgWoods_EventScript_James::
-	trainerbattle_single TRAINER_JAMES_1, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose, PetalburgWoods_EventScript_TryRegisterJames
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_JamesRematch
-	setvar VAR_0x8004, TRAINER_JAMES_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_TryRegisterJames2
+	trainerbattle_single TRAINER_JAMES, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose
 	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
 	release
-	end
-
-PetalburgWoods_EventScript_TryRegisterJames::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames
-	release
-	end
-
-PetalburgWoods_EventScript_RegisterJames::
-	msgbox PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JAMES_1
-	release
-	end
-
-PetalburgWoods_EventScript_TryRegisterJames2::
-	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames2
-	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
-	release
-	end
-
-PetalburgWoods_EventScript_RegisterJames2::
-	msgbox PetalburgWoods_Text_IWantRematch2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JAMES_1
-	release
-	end
-
-PetalburgWoods_EventScript_JamesRematch::
-	trainerbattle_rematch TRAINER_JAMES_1, PetalburgWoods_Text_MyPokemonHaveGrown, PetalburgWoods_Text_CantBePopularIfLose
-	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
@@ -355,8 +319,6 @@ PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Come on and battle me again!\p"
 	.string "I wish I could say that, but I'm out of\n"
 	.string "POKéMON…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
-	.string "after something in RUSTBORO.\p"
 	.string "I'll let you go today!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
@@ -367,13 +329,8 @@ PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "I know, I'll give you a GREAT BALL as\n"
 	.string "my thanks!$"
 
-PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Didn't that TEAM AQUA thug say\n"
-	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
-
 PetalburgWoods_Text_ICantBeWastingTime:
-	.string "Uh-oh! It's a crisis!\n"
+	.string "Uh-oh! I'm late to mee with my boss!\n"
 	.string "I can't be wasting time!$"
 
 PetalburgWoods_Text_YoureLoadedWithItems:

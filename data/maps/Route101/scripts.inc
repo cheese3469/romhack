@@ -16,6 +16,39 @@ Route101_OnFrame:
 // 	setvar VAR_ROUTE101_STATE, 1
 // 	end
 
+Route101_EventScript_Youngster_Kyle::
+	trainerbattle_single TRAINER_KYLE, Route102_Text_KyleIntro, Route102_Text_KyleDefeated
+	msgbox Route102_Text_KylePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route101_EventScript_Youngster_Michael::
+	trainerbattle_single TRAINER_MICHAEL, Route102_Text_MichaelIntro, Route102_Text_MichaelDefeated
+	msgbox Route102_Text_MichaelPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_Text_KyleIntro:
+	.string "You have POKéMON! Let's battle.$"
+
+Route102_Text_KyleDefeated:
+	.string "You're good at battling for a\n"
+	.string "beginner.$"
+
+Route102_Text_KylePostBattle:
+	.string "Good luck on your adventure!$"
+
+Route102_Text_MichaelIntro:
+	.string "Look at my cool POKéMON!$"
+
+Route102_Text_MichaelDefeated:
+	.string "Wow, your POKéMON are cool too.$"
+
+Route102_Text_MichaelPostBattle:
+	.string "Go find some more cool POKéMON!$"
+
+Route101_EventScript_RouteSign::
+	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
+	end
+
 Route101_EventScript_StartBirchRescue::
 	lockall
 	playbgm MUS_HELP, TRUE
@@ -203,18 +236,6 @@ Route101_Movement_Unused2:
 	walk_up
 	step_end
 
-Route101_EventScript_Youngster::
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
-	end
-
-Route101_EventScript_Boy::
-	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
-	end
-
-Route101_EventScript_RouteSign::
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-	end
-
 Route101_EventScript_BirchsBag::
 	lock
 	faceplayer
@@ -279,18 +300,6 @@ Route101_Text_YouSavedMe:
 	.string "Hi, you're {PLAYER}{KUN}!\p"
 	.string "This is not the place to chat, so come\n"
 	.string "by my POKéMON LAB later, okay?$"
-
-Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
-
-Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"

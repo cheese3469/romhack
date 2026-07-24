@@ -76,8 +76,8 @@ static void CB2_EndMarowakBattle(void);
 static void TryUpdateGymLeaderRematchFromWild(void);
 static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
-static void CB2_StartFirstBattle(void);
-static void CB2_EndFirstBattle(void);
+// static void CB2_StartFirstBattle(void);
+// static void CB2_EndFirstBattle(void);
 static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
 static void CB2_EndTrainerBattle(void);
@@ -165,10 +165,8 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_BROOKE] = REMATCH(TRAINER_BROOKE_1, TRAINER_BROOKE_2, TRAINER_BROOKE_3, TRAINER_BROOKE_4, TRAINER_BROOKE_5, MAP_ROUTE111),
     [REMATCH_WILTON] = REMATCH(TRAINER_WILTON_1, TRAINER_WILTON_2, TRAINER_WILTON_3, TRAINER_WILTON_4, TRAINER_WILTON_5, MAP_ROUTE111),
     [REMATCH_VALERIE] = REMATCH(TRAINER_VALERIE_1, TRAINER_VALERIE_2, TRAINER_VALERIE_3, TRAINER_VALERIE_4, TRAINER_VALERIE_5, MAP_MT_PYRE_6F),
-    [REMATCH_CINDY] = REMATCH(TRAINER_CINDY_1, TRAINER_CINDY_3, TRAINER_CINDY_4, TRAINER_CINDY_5, TRAINER_CINDY_6, MAP_ROUTE104),
     [REMATCH_THALIA] = REMATCH(TRAINER_THALIA_1, TRAINER_THALIA_2, TRAINER_THALIA_3, TRAINER_THALIA_4, TRAINER_THALIA_5, MAP_ABANDONED_SHIP_ROOMS_1F),
     [REMATCH_JESSICA] = REMATCH(TRAINER_JESSICA_1, TRAINER_JESSICA_2, TRAINER_JESSICA_3, TRAINER_JESSICA_4, TRAINER_JESSICA_5, MAP_ROUTE121),
-    [REMATCH_WINSTON] = REMATCH(TRAINER_WINSTON_1, TRAINER_WINSTON_2, TRAINER_WINSTON_3, TRAINER_WINSTON_4, TRAINER_WINSTON_5, MAP_ROUTE104),
     [REMATCH_STEVE] = REMATCH(TRAINER_STEVE_1, TRAINER_STEVE_2, TRAINER_STEVE_3, TRAINER_STEVE_4, TRAINER_STEVE_5, MAP_ROUTE114),
     [REMATCH_TONY] = REMATCH(TRAINER_TONY_1, TRAINER_TONY_2, TRAINER_TONY_3, TRAINER_TONY_4, TRAINER_TONY_5, MAP_ROUTE107),
     [REMATCH_NOB] = REMATCH(TRAINER_NOB_1, TRAINER_NOB_2, TRAINER_NOB_3, TRAINER_NOB_4, TRAINER_NOB_5, MAP_ROUTE115),
@@ -189,7 +187,6 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_MIGUEL] = REMATCH(TRAINER_MIGUEL_1, TRAINER_MIGUEL_2, TRAINER_MIGUEL_3, TRAINER_MIGUEL_4, TRAINER_MIGUEL_5, MAP_ROUTE103),
     [REMATCH_TIMOTHY] = REMATCH(TRAINER_TIMOTHY_1, TRAINER_TIMOTHY_2, TRAINER_TIMOTHY_3, TRAINER_TIMOTHY_4, TRAINER_TIMOTHY_5, MAP_ROUTE115),
     [REMATCH_SHELBY] = REMATCH(TRAINER_SHELBY_1, TRAINER_SHELBY_2, TRAINER_SHELBY_3, TRAINER_SHELBY_4, TRAINER_SHELBY_5, MAP_MT_CHIMNEY),
-    [REMATCH_CALVIN] = REMATCH(TRAINER_CALVIN_1, TRAINER_CALVIN_2, TRAINER_CALVIN_3, TRAINER_CALVIN_4, TRAINER_CALVIN_5, MAP_ROUTE102),
     [REMATCH_ELLIOT] = REMATCH(TRAINER_ELLIOT_1, TRAINER_ELLIOT_2, TRAINER_ELLIOT_3, TRAINER_ELLIOT_4, TRAINER_ELLIOT_5, MAP_ROUTE106),
     [REMATCH_ISAIAH] = REMATCH(TRAINER_ISAIAH_1, TRAINER_ISAIAH_2, TRAINER_ISAIAH_3, TRAINER_ISAIAH_4, TRAINER_ISAIAH_5, MAP_ROUTE128),
     [REMATCH_MARIA] = REMATCH(TRAINER_MARIA_1, TRAINER_MARIA_2, TRAINER_MARIA_3, TRAINER_MARIA_4, TRAINER_MARIA_5, MAP_ROUTE117),
@@ -214,8 +211,6 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_GABRIELLE] = REMATCH(TRAINER_GABRIELLE_1, TRAINER_GABRIELLE_2, TRAINER_GABRIELLE_3, TRAINER_GABRIELLE_4, TRAINER_GABRIELLE_5, MAP_MT_PYRE_3F),
     [REMATCH_CATHERINE] = REMATCH(TRAINER_CATHERINE_1, TRAINER_CATHERINE_2, TRAINER_CATHERINE_3, TRAINER_CATHERINE_4, TRAINER_CATHERINE_5, MAP_ROUTE119),
     [REMATCH_JACKSON] = REMATCH(TRAINER_JACKSON_1, TRAINER_JACKSON_2, TRAINER_JACKSON_3, TRAINER_JACKSON_4, TRAINER_JACKSON_5, MAP_ROUTE119),
-    [REMATCH_HALEY] = REMATCH(TRAINER_HALEY_1, TRAINER_HALEY_2, TRAINER_HALEY_3, TRAINER_HALEY_4, TRAINER_HALEY_5, MAP_ROUTE104),
-    [REMATCH_JAMES] = REMATCH(TRAINER_JAMES_1, TRAINER_JAMES_2, TRAINER_JAMES_3, TRAINER_JAMES_4, TRAINER_JAMES_5, MAP_PETALBURG_WOODS),
     [REMATCH_TRENT] = REMATCH(TRAINER_TRENT_1, TRAINER_TRENT_2, TRAINER_TRENT_3, TRAINER_TRENT_4, TRAINER_TRENT_5, MAP_ROUTE112),
     [REMATCH_SAWYER] = REMATCH(TRAINER_SAWYER_1, TRAINER_SAWYER_2, TRAINER_SAWYER_3, TRAINER_SAWYER_4, TRAINER_SAWYER_5, MAP_MT_CHIMNEY),
     [REMATCH_KIRA_AND_DAN] = REMATCH(TRAINER_KIRA_AND_DAN_1, TRAINER_KIRA_AND_DAN_2, TRAINER_KIRA_AND_DAN_3, TRAINER_KIRA_AND_DAN_4, TRAINER_KIRA_AND_DAN_5, MAP_ABANDONED_SHIP_ROOMS2_1F),
@@ -961,10 +956,12 @@ void ChooseStarter(void)
 static void CB2_GiveStarter(void)
 {
     u16 starterMon;
+    // u16 starterMet = METLOC_BIRCHS_LAB;
 
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    //SetMonData(&gPlayerParty[0], MON_DATA_MET_LOCATION, &BirchsLab)
     //ResetTasks();
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     //PlayBattleBGM();
@@ -972,32 +969,32 @@ static void CB2_GiveStarter(void)
     //BattleTransition_Start(B_TRANSITION_BLUR);
 }
 
-static void CB2_StartFirstBattle(void)
-{
-    UpdatePaletteFade();
-    RunTasks();
+// static void CB2_StartFirstBattle(void)
+// {
+//     UpdatePaletteFade();
+//     RunTasks();
 
-    if (IsBattleTransitionDone() == TRUE)
-    {
-        gBattleTypeFlags = BATTLE_TYPE_FIRST_BATTLE;
-        gMain.savedCallback = CB2_EndFirstBattle;
-        FreeAllWindowBuffers();
-        SetMainCallback2(CB2_InitBattle);
-        RestartWildEncounterImmunitySteps();
-        ClearPoisonStepCounter();
-        IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-        IncrementGameStat(GAME_STAT_WILD_BATTLES);
-        IncrementDailyWildBattles();
-        TryUpdateGymLeaderRematchFromWild();
-    }
-}
+//     if (IsBattleTransitionDone() == TRUE)
+//     {
+//         gBattleTypeFlags = BATTLE_TYPE_FIRST_BATTLE;
+//         gMain.savedCallback = CB2_EndFirstBattle;
+//         FreeAllWindowBuffers();
+//         SetMainCallback2(CB2_InitBattle);
+//         RestartWildEncounterImmunitySteps();
+//         ClearPoisonStepCounter();
+//         IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+//         IncrementGameStat(GAME_STAT_WILD_BATTLES);
+//         IncrementDailyWildBattles();
+//         TryUpdateGymLeaderRematchFromWild();
+//     }
+// }
 
-static void CB2_EndFirstBattle(void)
-{
-    Overworld_ClearSavedMusic();
-    DowngradeBadPoison();
-    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-}
+// static void CB2_EndFirstBattle(void)
+// {
+//     Overworld_ClearSavedMusic();
+//     DowngradeBadPoison();
+//     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+// }
 
 static void TryUpdateGymLeaderRematchFromWild(void)
 {

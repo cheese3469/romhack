@@ -24,6 +24,16 @@ Route116_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
+Route116_EventScript_Karate::
+	lock
+	msgbox Route116_Text_Karate, MSGBOX_DEFAULT
+	release
+	end
+
+Route116_Text_Karate:
+	.string "I'm practicing my karate skills on\n"
+	.string "these breakable rocks. Come back later.$"
+
 Route116_EventScript_WandasBoyfriend::
 	lock
 	faceplayer

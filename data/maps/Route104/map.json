@@ -3,7 +3,6 @@
   "name": "Route104",
   "layout": "LAYOUT_ROUTE104",
   "music": "MUS_ROUTE104",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_104",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -59,14 +58,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 31,
-      "y": 24,
+      "x": 32,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "7",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route104_EventScript_Haley",
       "flag": "0"
     },
@@ -98,8 +97,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 28,
-      "y": 74,
+      "x": 21,
+      "y": 72,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -139,14 +138,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 29,
+      "x": 26,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route104_EventScript_Ivan",
       "flag": "0"
     },
@@ -320,6 +319,7 @@
       "flag": "FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST"
     },
     {
+      "local_id": "LOCALID_GINA",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 27,
       "y": 15,
@@ -333,6 +333,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MIA",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 28,
       "y": 15,
@@ -347,27 +348,27 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 21,
-      "y": 25,
+      "x": 22,
+      "y": 26,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route104_EventScript_Winston",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 11,
-      "y": 44,
+      "x": 9,
+      "y": 41,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route104_EventScript_Cindy",
       "flag": "0"
     },
@@ -386,10 +387,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 18,
-      "y": 67,
+      "x": 30,
+      "y": 71,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 5,
       "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -452,13 +453,13 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 15,
-      "y": 59,
+      "y": 58,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route104_EventScript_Darian",
       "flag": "0"
     },
@@ -544,6 +545,24 @@
       "var": "VAR_ROUTE104_STATE",
       "var_value": "1",
       "script": "Route104_EventScript_RivalTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_DOUBLE",
+      "var_value": "0",
+      "script": "Route104_EventScript_ForceDoubleBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ROUTE104_DOUBLE",
+      "var_value": "0",
+      "script": "Route104_EventScript_ResetDouble"
     }
   ],
   "bg_events": [
@@ -627,5 +646,6 @@
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

@@ -3,8 +3,20 @@
 
 #include "constants/random_mon_generation.h"
 
-static const struct RandomSpeciesGeneratorOptions sRandomSpeciesGeneratorOptions[RANDOM_SPECIES_OPTIONS_COUNT] =
+static const enum Species sRandomSpeciesNormanGiftSpeciesPool[] =
 {
+    SPECIES_PHANPY,
+    SPECIES_AIPOM,
+    SPECIES_GLIGAR,
+};
+
+static const struct RandomSpeciesGeneratorOptions sRandomSpeciesGeneratorOptions[] =
+{
+    [SPECIES_GENERATOR_NORMAN_GIFT] =
+    {
+        .speciesPool = sRandomSpeciesNormanGiftSpeciesPool,
+        .speciesPoolCount = ARRAY_COUNT(sRandomSpeciesNormanGiftSpeciesPool),
+    },
 };
 
 static const struct RandomItemGeneratorOptions sRandomItemGeneratorOptions[RANDOM_ITEM_OPTIONS_COUNT] =
