@@ -923,6 +923,75 @@ Route104_EventScript_Darian::
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route104_EventScript_OldRodFisherman::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_OLD_ROD, Route104_EventScript_HowsFishing
+	msgbox Route104_Text_GettingItchToFish, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route104_EventScript_GiveOldRod
+	goto_if_eq VAR_RESULT, NO, Route104_EventScript_NotGettingItchToFish
+	end
+
+Route104_EventScript_GiveOldRod::
+	msgbox Route104_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT
+	giveitem ITEM_OLD_ROD
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_OLD_ROD
+	msgbox Route104_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_NotGettingItchToFish::
+	msgbox Route104_Text_ThatsTooBadThen, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_HowsFishing::
+	message Route104_Text_HowsYourFishing
+	waitmessage
+	multichoice 20, 8, MULTI_HOWS_FISHING, TRUE
+	goto_if_eq VAR_RESULT, 0, Route104_EventScript_FishingExcellent
+	goto_if_eq VAR_RESULT, 1, Route104_EventScript_FishingNotSoGood
+	end
+
+Route104_EventScript_FishingExcellent::
+	msgbox Route104_Text_GreatHaulInSomeBigOnes, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_FishingNotSoGood::
+	msgbox Route104_Text_FishingAdvice, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_Text_GettingItchToFish:
+	.string "This is a renowned fishing spot.\n"
+	.string "Are you getting the itch to fish?$"
+
+Route104_Text_GiveYouOneOfMyRods:
+	.string "I hear you, and I like what\n"
+	.string "you're saying!\p"
+	.string "I'll give you one of my fishing RODS.$"
+
+Route104_Text_ThrowInFishingAdvice:
+	.string "As an added bonus, I'll even throw in a\n"
+	.string "little fishing advice: Patience is key.$"
+
+Route104_Text_ThatsTooBadThen:
+	.string "Oh, is that so?\n"
+	.string "That's too bad, then.$"
+
+Route104_Text_HowsYourFishing:
+	.string "Yo!\n"
+	.string "How's your fishing?$"
+
+Route104_Text_GreatHaulInSomeBigOnes:
+	.string "Is that right! That's great!\n"
+	.string "Haul in some big ones!$"
+
+Route104_Text_FishingAdvice:
+	.string "Oh, hey, don't get down on yourself!$"
+
 Route104_Text_BrineyLivesInSeasideCottage:
 	.string "That seaside cottage is where\n"
 	.string "MR. BRINEY lives.\p"
