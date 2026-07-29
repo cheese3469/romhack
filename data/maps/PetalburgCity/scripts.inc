@@ -732,6 +732,10 @@ PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_AbandonedHouse::
+	msgbox PetalburgCity_Text_AbandonedHouse, MSGBOX_SIGN
+	end
+
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
@@ -776,6 +780,10 @@ PetalburgCity_Text_CitySign:
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
+
+PetalburgCity_Text_AbandonedHouse:
+	.string "The door is locked, it looks like\n"
+	.string "no one has lived here in years...$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"

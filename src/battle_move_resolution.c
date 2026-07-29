@@ -3600,7 +3600,7 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
              && !NoAliveMonsForEitherParty()
              && CompareStat(cv->battlerAtk, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, cv->abilities[cv->battlerAtk]))
             {
-                s32 stage = GetConfig(B_FELL_STINGER_STAT_RAISE) >= GEN_7 ? 3 : 2;
+                s32 stage = GetConfig(B_FELL_STINGER_STAT_RAISE) >= GEN_7 ? 1 : 1;
                 SetStatChange(gBattlerAttacker, STAT_ATK, stage);
                 BattleScriptCall(BattleScript_MoveEffectStatChange);
                 gBattleStruct->eventState.moveEndBattler = 0;

@@ -202,11 +202,12 @@ PetalburgCity_Gym_EventScript_NormanGiftSouth::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST
+	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
-	msgbox PetalburgCity_Gym_Text_DadGoodLuck, MSGBOX_DEFAULT
-	closemessage
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_LECHONK, PetalburgCity_Gym_EventScript_NormanLechonk
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_WOOLOO, PetalburgCity_Gym_EventScript_NormanWooloo
 	end
 
 PetalburgCity_Gym_EventScript_NormanGiftNorth::
@@ -214,11 +215,12 @@ PetalburgCity_Gym_EventScript_NormanGiftNorth::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST
+	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
-	msgbox PetalburgCity_Gym_Text_DadGoodLuck, MSGBOX_DEFAULT
-	closemessage
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_LECHONK, PetalburgCity_Gym_EventScript_NormanLechonk
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_WOOLOO, PetalburgCity_Gym_EventScript_NormanWooloo
 	end
 
 PetalburgCity_Gym_EventScript_NormanGiftWest::
@@ -226,11 +228,12 @@ PetalburgCity_Gym_EventScript_NormanGiftWest::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST
+	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
-	msgbox PetalburgCity_Gym_Text_DadGoodLuck, MSGBOX_DEFAULT
-	closemessage
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_LECHONK, PetalburgCity_Gym_EventScript_NormanLechonk
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_WOOLOO, PetalburgCity_Gym_EventScript_NormanWooloo
 	end
 
 PetalburgCity_Gym_EventScript_NormanGiftEast::
@@ -238,10 +241,26 @@ PetalburgCity_Gym_EventScript_NormanGiftEast::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST
+	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
-	msgbox PetalburgCity_Gym_Text_DadGoodLuck, MSGBOX_DEFAULT
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_LECHONK, PetalburgCity_Gym_EventScript_NormanLechonk
+	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_WOOLOO, PetalburgCity_Gym_EventScript_NormanWooloo
+	end
+
+PetalburgCity_Gym_EventScript_NormanBuneary::
+	msgbox PetalburgCity_Gym_Text_Buneary, MSGBOX_DEFAULT
+	closemessage
+	end
+
+PetalburgCity_Gym_EventScript_NormanLechonk::
+	msgbox PetalburgCity_Gym_Text_Lechonk, MSGBOX_DEFAULT
+	closemessage
+	end
+
+PetalburgCity_Gym_EventScript_NormanWooloo::
+	msgbox PetalburgCity_Gym_Text_Wooloo, MSGBOX_DEFAULT
 	closemessage
 	end
 
@@ -1213,8 +1232,22 @@ PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
 	.string "WALLY: Thank you! I'll do my best.$"
 
 PetalburgCity_Gym_Text_DadGift:
-	.string "DAD: I have a gift for you as well.\n"
-	.string "Take care of this POKéMON for me.$"
+	.string "DAD: I have a gift for you as well.\p"
+	.string "A local farm asked me to take care\n"
+	.string "of this POKéMON. I'd like you to watch\l"
+	.string "it for me.$"
+
+PetalburgCity_Gym_Text_Buneary:
+	.string "Take good care of BUNEARY for me!\n"
+	.string "Have fun on your adventure!$"
+
+PetalburgCity_Gym_Text_Lechonk:
+	.string "Take good care of LECHONK for me!\n"
+	.string "Have fun on your adventure!$"
+
+PetalburgCity_Gym_Text_Wooloo:
+	.string "Take good care of WOOLOO for me!\n"
+	.string "Have fun on your adventure!$"
 
 PetalburgCity_Gym_Text_DadGoodLuck:
 	.string "Goodbye and good luck on your\n"

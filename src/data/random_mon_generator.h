@@ -5,9 +5,9 @@
 
 static const enum Species sRandomSpeciesNormanGiftSpeciesPool[] =
 {
-    SPECIES_PHANPY,
-    SPECIES_AIPOM,
-    SPECIES_GLIGAR,
+    SPECIES_BUNEARY,
+    SPECIES_WOOLOO,
+    SPECIES_LECHONK,
 };
 
 static const struct RandomSpeciesGeneratorOptions sRandomSpeciesGeneratorOptions[] =

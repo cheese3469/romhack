@@ -2525,7 +2525,7 @@ Nature: Timid
 - Bite
 
 Fidough (M) @ Metronome
-Level: 10
+Level: 11
 Ability: Own Tempo
 Nature: Timid
 - Play Rough
@@ -4756,7 +4756,7 @@ Nature: Hasty
 - Acid Spray
 
 Growlithe-Hisui (F) @ Passho Berry
-Level: 12
+Level: 13
 Ability: Intimidate
 Nature: Bold
 - Bite
@@ -4765,7 +4765,7 @@ Nature: Bold
 - Trailblaze
 
 Tyrunt (F) @ Expert Belt
-Level: 12
+Level: 13
 Ability: Sturdy
 Nature: Modest
 - Dragon Breath
@@ -4783,7 +4783,7 @@ Nature: Adamant
 - Ancient Power
 
 Geodude (F) @ Rindo Berry
-Level: 14
+Level: 15
 Ability: Sturdy
 Nature: Sassy
 - Rock Tomb
@@ -4792,7 +4792,7 @@ Nature: Sassy
 - Protect
 
 Nosepass (F) @ Leftovers
-Level: 15
+Level: 16
 Ability: Sturdy
 Nature: Bold
 - Rock Tomb
@@ -6084,7 +6084,7 @@ Nature: Adamant
 - Aqua Tail
 
 Rolycoly (M) @ Shuca Berry
-Level: 11
+Level: 12
 Ability: Heatproof
 Nature: Impish
 - Rock Blast
@@ -6093,7 +6093,7 @@ Nature: Impish
 - Magnitude
 
 Timburr (M) @ Rocky Helmet
-Level: 11
+Level: 12
 Ability: Guts
 Nature: Jolly
 - Mach Punch
@@ -6111,7 +6111,7 @@ Double Battle: No
 AI: Smart Trainer
 
 Diglett (M) @ Soft Sand
-Level: 10
+Level: 11
 Ability: Arena Trap
 Nature: Jolly
 - Magnitude
@@ -6120,7 +6120,7 @@ Nature: Jolly
 - Iron Head
 
 Aron (M) @ Shuca Berry
-Level: 11
+Level: 12
 Ability: Sturdy
 Nature: Gentle
 - Iron Head
@@ -6138,7 +6138,7 @@ Nature: Sassy
 - Leaf Blade
 
 Sandshrew (M) @ Rocky Helmet
-Level: 11
+Level: 13
 Ability: Sand Veil
 Nature: Relaxed
 - Magnitude
@@ -6147,7 +6147,7 @@ Nature: Relaxed
 - Metal Claw
 
 Bonsly (M) @ Choice Scarf
-Level: 12
+Level: 11
 Ability: Rock Head
 Nature: Timid
 - Double-Edge
@@ -6430,7 +6430,7 @@ Double Battle: No
 AI: Smart Trainer
 
 Wiglett (M) @ Sticky Barb
-Level: 9
+Level: 10
 Ability: Gooey
 Nature: Hasty
 - Aqua Jet
@@ -6439,7 +6439,7 @@ Nature: Hasty
 - Liquidation
 
 Feebas (M) @ Damp Rock
-Level: 10
+Level: 11
 Ability: Swift Swim
 Nature: Modest
 - Rain Dance
@@ -6448,7 +6448,7 @@ Nature: Modest
 - Ice Beam
 
 Magikarp (M) @ Mystic Water
-Level: 11
+Level: 12
 Ability: Swift Swim
 Nature: Serious
 - Splash
@@ -8921,7 +8921,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Pichu (F) @ Magnet
-Level: 12
+Level: 13
 Ability: Static
 Nature: Hardy
 - Helping Hand
@@ -8935,7 +8935,7 @@ Nature: Docile
 - Draining Kiss
 
 Mime Jr. (F) @ Twisted Spoon
-Level: 12
+Level: 13
 Ability: Filter
 Nature: Quirky
 - Helping Hand
@@ -10685,7 +10685,7 @@ Double Battle: No
 AI: SMart Trainer
 
 Larvitar (M) @ Flame Orb
-Level: 11
+Level: 12
 Ability: Guts
 Nature: Sassy
 - Facade
@@ -10721,7 +10721,7 @@ Nature: Brave
 - Magnitude
 
 Rockruff (M) @ Shuca Berry
-Level: 12
+Level: 13
 Ability: Steadfast
 Nature: Impish
 - Accelerock
@@ -11260,7 +11260,7 @@ Double Battle: No
 AI: Smart Trainer
 
 Nacli (F) @ Luck Incense
-Level: 9
+Level: 10
 Ability: Sturdy
 Nature: Serious
 - Stealth Rock
@@ -11277,7 +11277,7 @@ Nature: Rash
 - Zen Headbutt
 
 Sinistea (F) @ Weakness Policy
-Level: 10
+Level: 11
 Ability: Weak Armor
 Nature: Gentle
 - Hex
@@ -11463,7 +11463,7 @@ Nature: Quiet
 
 Charjabug (M) @ Quick Claw
 Level: 9
-Ability: Battery
+Ability: Swarm
 Nature: Brave
 - Bug Bite
 - Spark
