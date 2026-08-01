@@ -55,6 +55,7 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	setvar VAR_0x8005, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
 	call LittlerootTown_EventScript_LoadSomeThings
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 	setvar VAR_0x8004, 7
@@ -80,6 +81,7 @@ LittlerootTown_EventScript_StepOffTruckFemale::
 	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
 	call LittlerootTown_EventScript_LoadSomeThings
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
 	setflag FLAG_MET_RIVAL_MOM
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2
@@ -140,6 +142,9 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	delay 10
 	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
 	waitmovement 0
+	msgbox LittlerootTown_Text_SetClock, MSGBOX_DEFAULT
+	waitmessage
+	special StartWallClock
 	msgbox LittlerootTown_Text_OurNewHomeLetsGoInside, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachDoor
@@ -158,11 +163,15 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	waitdooranim
 	return
 
-LittlerootTown_Text_OurNewHomeLetsGoInside:
+LittlerootTown_Text_SetClock:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "Don't worry about our things in\n"
 	.string "the truck right now.\p"
-	.string "Go talk to PROF. BIRCH!$"
+	.string "And let me set your clock for you\n"
+	.string "What time is it?$"
+
+LittlerootTown_Text_OurNewHomeLetsGoInside:
+	.string "Now go talk to PROF. BIRCH!$"
 
 LittlerootTown_Movement_GoSeeProfFemale:
 	walk_in_place_fast_down

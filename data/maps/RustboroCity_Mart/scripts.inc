@@ -10,6 +10,16 @@ RustboroCity_Mart_EventScript_Clerk::
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartExpanded
 	end
 
+RustboroCity_Mart_EventScript_PremiumClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart RustboroCity_Mart_Pokemart_Premium
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
 RustboroCity_Mart_EventScript_PokemartBasic::
 	pokemart RustboroCity_Mart_Pokemart_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
@@ -20,14 +30,9 @@ RustboroCity_Mart_EventScript_PokemartBasic::
 RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_FULL_HEAL
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
@@ -39,17 +44,25 @@ RustboroCity_Mart_EventScript_PokemartExpanded::
 	.align 2
 RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_POKE_BALL
-	.2byte ITEM_TIMER_BALL
-	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_FULL_HEAL
+	pokemartlistend
+
+	.align 2
+RustboroCity_Mart_Pokemart_Premium:
+	.2byte ITEM_SILK_SCARF
+	.2byte ITEM_MIRACLE_SEED
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_MAGNET
+	.2byte ITEM_SILVER_POWDER
+	.2byte ITEM_SHARP_BEAK
+	.2byte ITEM_HARD_STONE
+	.2byte ITEM_POISON_BARB
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokefanF::

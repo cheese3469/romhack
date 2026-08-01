@@ -88,7 +88,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
-	giveitem ITEM_GREAT_BALL
+	giveitem ITEM_GREAT_BALL, 5
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_BagFull
 	goto PetalburgWoods_EventScript_DevonResearcherFinish
 	end
@@ -246,14 +246,17 @@ PetalburgWoods_EventScript_Boy2::
 
 PetalburgWoods_EventScript_Girl::
 	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainMiracleSeed
+ 	faceplayer
 	msgbox PetalburgWoods_Text_TryUsingThisItem, MSGBOX_DEFAULT
-	giveitem ITEM_MIRACLE_SEED
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_MIRACLE_SEED
+	goto_if_unset FLAG_RECEIVED_PETALBURG_HIDDEN_POWER, PetalburgWoods_EventScript_HiddenPower
 	release
 	end
+
+PetalburgWoods_EventScript_HiddenPower::
+	giveitem ITEM_TM_HIDDEN_POWER
+	msgbox PetalburgWoods_Text_UnleashYourHiddenPower, MSGBOX_DEFAULT
+	closemessage
+	return
 
 PetalburgWoods_EventScript_ExplainMiracleSeed::
 	msgbox PetalburgWoods_Text_MiracleSeedExplanation, MSGBOX_DEFAULT
@@ -392,15 +395,15 @@ PetalburgWoods_Text_StayOutOfTallGrass:
 
 PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "Sometimes, there are things on the\n"
-	.string "ground even if you can't see them.\p"
-	.string "That's why I always check where I'm\n"
-	.string "walking.$"
+	.string "ground.$"
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
-	.string "You must be a TRAINER.\n"
-	.string "You should try using this item.$"
+	.string "You must be a TRAINER.$"
+
+PetalburgWoods_Text_UnleashYourHiddenPower:
+	.string "Try using this to unlock the hidden\n"
+	.string "power inside you.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
 	.string "It's a MIRACLE SEED.\n"

@@ -1963,9 +1963,9 @@ bool32 TryChangeBattleWeather(enum BattlerId battler, u32 battleWeatherId, enum 
         if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
             gBattleStruct->weatherDuration = 0;
         else if (rock != 0 && GetBattlerHoldEffect(battler) == rock)
-            gBattleStruct->weatherDuration = 8;
+            gBattleStruct->weatherDuration = 0;
         else
-            gBattleStruct->weatherDuration = 5;
+            gBattleStruct->weatherDuration = 0;
     }
 
     if (ability != ABILITY_NONE) // Weather started by Ability

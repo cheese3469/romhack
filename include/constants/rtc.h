@@ -33,14 +33,14 @@
     #define MORNING_HOUR_BEGIN 0
     #define MORNING_HOUR_END   0
 
-    #define DAY_HOUR_BEGIN     12
-    #define DAY_HOUR_END       HOURS_PER_DAY
+    #define DAY_HOUR_BEGIN     8
+    #define DAY_HOUR_END       20
 
     #define EVENING_HOUR_BEGIN 0
     #define EVENING_HOUR_END   0
 
-    #define NIGHT_HOUR_BEGIN   0
-    #define NIGHT_HOUR_END     12
+    #define NIGHT_HOUR_BEGIN   20
+    #define NIGHT_HOUR_END     8
 //Evening doesn't exist in Gen 4
 #elif OW_TIMES_OF_DAY == GEN_4
     #define MORNING_HOUR_BEGIN 4

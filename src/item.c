@@ -964,7 +964,7 @@ bool32 ItemHasVolatileFlag(enum Item itemId, enum Volatile _volatile)
 
 u32 GetItemSellPrice(enum Item itemId)
 {
-    return GetItemPrice(itemId) / ITEM_SELL_FACTOR;
+    return 0;
 }
 
 bool32 IsHoldEffectChoice(enum HoldEffect holdEffect)

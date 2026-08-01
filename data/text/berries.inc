@@ -11,12 +11,9 @@ Route104_Text_PlantBerriesInSoilTakeThis:
 	.string "Here, I'll share this with you.$"
 
 Route104_Text_TrainersOftenMakeMonHoldBerries:
-	.string "The way you look, you must be a\n"
-	.string "TRAINER, no?\p"
 	.string "TRAINERS often make POKéMON hold\n"
-	.string "BERRIES.\p"
-	.string "It's up to you whether to grow BERRIES\n"
-	.string "or use them.$"
+	.string "BERRIES. Too bad they don't grow\l"
+	.string "very well here.$"
 
 Route111_Text_WateredPlantsEveryDayTakeBerry:
 	.string "I watered the plants every day.\n"
@@ -151,52 +148,38 @@ Route104_PrettyPetalFlowerShop_Text_IntroLearnAboutBerries:
 	.string "BERRIES?$"
 
 Route104_PrettyPetalFlowerShop_Text_BerriesExplanation:
-	.string "BERRIES grow on trees that thrive\n"
-	.string "only in soft, loamy soil.\p"
-	.string "If you take some BERRIES, be sure to\n"
-	.string "plant one in the loamy soil again.\p"
-	.string "A planted BERRY will soon sprout,\n"
-	.string "grow into a plant, flower beautifully,\l"
-	.string "then grow BERRIES again.\p"
-	.string "I want to see the whole wide world\n"
-	.string "filled with beautiful flowers.\l"
-	.string "That's my dream.\p"
-	.string "Please help me, {PLAYER}{KUN}. Plant BERRIES\n"
-	.string "and bring more flowers into the world.$"
+	.string "BERRIES can grow on trees that thrive\n"
+	.string "in soft, loamy soil. Sadly, the weather\l"
+	.string "patterns in HOENN have been quite\l"
+	.string "unstable recently and BERRIES are not\l"
+	.string "growing like they used to!\p"
+	.string "BERRIES are a rare commodity these days,\n"
+	.string "so use them wisely when you get them!\p"
+	.string "Lucky for you, I have one you can take.$"
 
 Route104_PrettyPetalFlowerShop_Text_FlowersBringHappiness:
 	.string "Flowers bring so much happiness to\n"
 	.string "people, don't they?$"
 
 Route104_PrettyPetalFlowerShop_Text_YouCanHaveThis:
-	.string "Hello!\p"
 	.string "The more attention you give to flowers,\n"
 	.string "the more beautifully they bloom.\p"
 	.string "You'll like tending flowers. I'm sure\n"
 	.string "of it. You can have this.$"
 
 Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation:
-	.string "While BERRY plants are growing,\n"
-	.string "water them with the WAILMER PAIL.\p"
-	.string "Oh, another thing.\p"
-	.string "If you don't pick BERRIES for a while,\n"
-	.string "they'll drop off onto the ground.\l"
-	.string "But they'll sprout again.\p"
-	.string "Isn't that awesome?\n"
-	.string "It's like they have the will to live.$"
+	.string "It's a WAILMER PAIL! It's good for\n"
+	.string "flowers but it doesn't seem to do\l"
+	.string "much for berries.$"
 
 Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers:
 	.string "I'm trying to be like my big sisters.\n"
 	.string "I'm growing flowers, too!\p"
-	.string "Here you go!\n"
-	.string "It's for you!$"
+	.string "I want some candy, too.$"
 
 Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries:
-	.string "You can plant a BERRY and grow it big,\n"
-	.string "or you can make a POKéMON hold it.\p"
-	.string "But now they have a machine that mixes\n"
-	.string "up different BERRIES and makes candies\l"
-	.string "for POKéMON.\p"
+	.string "I'm trying to be like my big sisters.\n"
+	.string "I'm growing flowers, too!\p"
 	.string "I want some candy, too.$"
 
 SootopolisCity_Text_NameIsKiriHaveOneOfThese:

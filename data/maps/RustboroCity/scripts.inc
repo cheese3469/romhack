@@ -214,6 +214,10 @@ RustboroCity_EventScript_CuttersHouseSign::
 	msgbox RustboroCity_Text_CuttersHouse, MSGBOX_SIGN
 	end
 
+RustboroCity_EventScript_ParkSign::
+	msgbox RustboroCity_Text_ParkSign, MSGBOX_SIGN
+	end
+
 RustboroCity_EventScript_LittleBoy::
 	lock
 	faceplayer
@@ -1009,8 +1013,21 @@ RustboroCity_Movement_RivalApproachPlayer7:
 	step_end
 
 RustboroCity_EventScript_Boy1::
-	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_AUTOCLOSE
+	goto_if_unset FLAG_ITEM_RUSTBORO_RARE_CANDY, RustboroCity_EventScript_Boy1Candy
+	release
 	end
+
+RustboroCity_EventScript_Boy1Candy:
+	setflag FLAG_ITEM_RUSTBORO_RARE_CANDY
+	msgbox RustboroCity_Text_YouCanHaveThis, MSGBOX_AUTOCLOSE
+	giveitem ITEM_RARE_CANDY, 40
+	return
+
+RustboroCity_Text_YouCanHaveThis:
+	.string "You can have some!$"
 
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
@@ -1250,6 +1267,9 @@ RustboroCity_Text_TrainersSchoolSign:
 	.string "“We'll teach you anything about\n"
 	.string "POKéMON!”$"
 
+RustboroCity_Text_ParkSign:
+	.string "RUSTBRO CITY PARK$"
+
 RustboroCity_Text_CuttersHouse:
 	.string "CUTTER'S HOUSE$"
 
@@ -1281,10 +1301,4 @@ RustboroCity_Text_IdBetterGetBackToWork:
 
 RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Did you know this?\p"
-	.string "You can have a 2-on-2 battle even\n"
-	.string "if you're not with another TRAINER.\p"
-	.string "If you catch the eyes of two TRAINERS\n"
-	.string "when you have two or more POKéMON,\l"
-	.string "they'll both challenge you.\p"
-	.string "Don't you think it'd be cool if you\n"
-	.string "could beat two TRAINERS by yourself?$"
+	.string "A man gave me some candy!$"

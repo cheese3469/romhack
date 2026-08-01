@@ -43,6 +43,14 @@ Route102_EventScript_Allen::
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Common_EventScript_NoBerry::
+	msgbox Common_Text_NoBerry, MSGBOX_AUTOCLOSE
+	end
+
+Common_Text_NoBerry:
+    .string "It appears that no berries can grow\n"
+	.string "here due to unpredictable weather.$"
+
 Route102_Text_WatchMeCatchPokemon:
 	.string "WALLY: {PLAYER}…\n"
 	.string "POKéMON hide in tall grass like this,\l"

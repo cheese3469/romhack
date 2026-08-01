@@ -5830,7 +5830,7 @@ static void Cmd_hitanimation(void)
 
 static u32 GetTrainerMoneyToGive(u16 trainerId)
 {
-    u32 lastMonLevel = 0;
+    //u32 lastMonLevel = 0;
     u32 moneyReward;
     u8 trainerMoney = 0;
 
@@ -5843,15 +5843,15 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
             return 20;
-        lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
-        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
+        //lastMonLevel = party[GetTrainerPartySizeFromId(trainerId) - 1].lvl;
+        trainerMoney = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 10;
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = trainerMoney;
         else if (IsDoubleBattle())
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * trainerMoney;
+            moneyReward = trainerMoney;
         else
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * trainerMoney;
+            moneyReward = trainerMoney;
     }
 
     return moneyReward;
@@ -5875,7 +5875,7 @@ static void Cmd_getmoneyreward(void)
     {
         if (B_WHITEOUT_MONEY <= GEN_3)
         {
-            money = GetMoney(&gSaveBlock1Ptr->money) / 2;
+            money = GetMoney(&gSaveBlock1Ptr->money);
         }
         else
         {

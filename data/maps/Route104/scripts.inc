@@ -15,18 +15,18 @@ Route104_EventScript_StartSailToDewford::
 Route104_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route104_EventScript_TrySetRivalPos
-	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
+	//call Route104_EventScript_ShowOrHideWhiteHerbFlorist
 	end
 
-Route104_EventScript_ShowOrHideWhiteHerbFlorist::
-	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_EventScript_HideWhiteHerbFlorist
-	goto_if_unset FLAG_BADGE03_GET, Route104_EventScript_HideWhiteHerbFlorist
-	clearflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
-	return
+// Route104_EventScript_ShowOrHideWhiteHerbFlorist::
+// 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_EventScript_HideWhiteHerbFlorist
+// 	goto_if_unset FLAG_BADGE03_GET, Route104_EventScript_HideWhiteHerbFlorist
+// 	clearflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
+// 	return
 
-Route104_EventScript_HideWhiteHerbFlorist::
-	setflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
-	return
+// Route104_EventScript_HideWhiteHerbFlorist::
+// 	setflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
+// 	return
 
 Route104_EventScript_TrySetRivalPos::
 	goto_if_ge VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_DontSetRivalPos
@@ -256,11 +256,6 @@ Route104_Movement_RivalExitBrineysCottage:
 Route104_EventScript_ExpertF::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ReceivedBerry
-	msgbox Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_CHESTO_BERRY
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104
 	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
 	release
 	end
@@ -270,21 +265,21 @@ Route104_EventScript_ReceivedBerry::
 	release
 	end
 
-Route104_EventScript_WhiteHerbFlorist::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_WHITE_HERB, Route104_EventScript_ReceivedWhiteHerb
-	msgbox Route104_Text_DontNeedThisTakeIt, MSGBOX_DEFAULT
-	giveitem ITEM_WHITE_HERB
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_WHITE_HERB
-	release
-	end
+// Route104_EventScript_WhiteHerbFlorist::
+// 	lock
+// 	faceplayer
+// 	goto_if_set FLAG_RECEIVED_WHITE_HERB, Route104_EventScript_ReceivedWhiteHerb
+// 	msgbox Route104_Text_DontNeedThisTakeIt, MSGBOX_DEFAULT
+// 	giveitem ITEM_WHITE_HERB
+// 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+// 	setflag FLAG_RECEIVED_WHITE_HERB
+// 	release
+// 	end
 
-Route104_EventScript_ReceivedWhiteHerb::
-	msgbox Route104_Text_FlowerShopSellingSaplings, MSGBOX_DEFAULT
-	release
-	end
+// Route104_EventScript_ReceivedWhiteHerb::
+// 	msgbox Route104_Text_FlowerShopSellingSaplings, MSGBOX_DEFAULT
+// 	release
+// 	end
 
 Route104_EventScript_Girl1::
 	msgbox Route104_Text_BrineyLivesInSeasideCottage, MSGBOX_NPC
@@ -325,11 +320,7 @@ Route104_EventScript_Woman::
 Route104_EventScript_Boy2::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM_BULLET_SEED, Route104_EventScript_ReceivedBulletSeed
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_BULLET_SEED
 	release
 	end
 
@@ -884,39 +875,52 @@ Route104_EventScript_Mia::
 	release
 	end
 
-Route104_EventScript_ForceDoubleBattle::
-	lock
-	special HasEnoughMonsForDoubleBattle
-	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, Route104_EventScript_GetMorePokemon
-	release
-	end
+// Route104_EventScript_ForceDoubleBattle::
+// 	lock
+// 	special HasEnoughMonsForDoubleBattle
+// 	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, Route104_EventScript_GetMorePokemon
+// 	release
+// 	end
 
-Route104_EventScript_GetMorePokemon::
-	lockall
-	applymovement LOCALID_MIA, Route104_Movement_Mia
-	applymovement LOCALID_GINA, Route104_Movement_Gina
-	waitmovement 0
-	msgbox Route104_Text_GinaNotEnoughMons, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Route104_Movement_TwinPush
-	releaseall
-	end
+// Route104_EventScript_GetMorePokemon::
+// 	lockall
+// 	applymovement LOCALID_MIA, Route104_Movement_Mia
+// 	applymovement LOCALID_GINA, Route104_Movement_Gina
+// 	waitmovement 0
+// 	msgbox Route104_Text_GinaNotEnoughMons, MSGBOX_DEFAULT
+// 	applymovement LOCALID_PLAYER, Route104_Movement_TwinPush
+// 	applymovement LOCALID_MIA, Route104_Movement_MiaReturn
+// 	applymovement LOCALID_GINA, Route104_Movement_GinaReturn
+// 	waitmovement
+// 	releaseall
+// 	end
 
-Route104_EventScript_ResetDouble::
-	setvar VAR_ROUTE104_DOUBLE, 1
-	end
+// Route104_EventScript_ResetDouble::
+// 	setvar VAR_ROUTE_104_DOUBLE, 1
+// 	end
 
-Route104_Movement_Mia:
-	walk_in_place_right
-	step_end
+// Route104_Movement_Mia:
+// 	walk_in_place_right
+// 	step_end
 
-Route104_Movement_Gina:
-	walk_down
-	walk_right
-	step_end
+// Route104_Movement_Gina:
+// 	walk_down
+// 	walk_right
+// 	step_end
 
-Route104_Movement_TwinPush:
-	walk_right
-	step_end
+// Route104_Movement_TwinPush:
+// 	walk_right
+// 	step_end
+
+// Route104_Movement_MiaReturn:
+// 	walk_in_place_down
+// 	step_end
+
+// Route104_Movement_GinaReturn:
+// 	walk_left
+// 	walk_up
+// 	walk_in_place_down
+// 	step_end
 
 Route104_EventScript_Darian::
 	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
@@ -1024,10 +1028,7 @@ Route104_Text_ImNotATrainer:
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "I like filling my mouth with seeds,\n"
-	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "then spitting them out fast!$"
 
 Route104_Text_TMsAreOneTimeUse:
 	.string "A word of advice!\p"

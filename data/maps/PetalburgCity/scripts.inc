@@ -561,6 +561,10 @@ PetalburgCity_EventScript_Scott::
 
 PetalburgCity_EventScript_StartScottBattleTreecko::
 	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_TREECKO, PetalburgCity_Text_ScottPostBattle
+	msgbox PetalburgCity_Text_ScottGiveCandy, MSGBOX_AUTOCLOSE
+	giveitem ITEM_RARE_CANDY, 30
+	msgbox PetalburgCity_Text_ScottGoodbye, MSGBOX_DEFAULT
+	closemessage
 	fadedefaultbgm
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
@@ -572,6 +576,10 @@ PetalburgCity_EventScript_StartScottBattleTreecko::
 
 PetalburgCity_EventScript_StartScottBattleTorchic::
 	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_TORCHIC, PetalburgCity_Text_ScottPostBattle
+	msgbox PetalburgCity_Text_ScottGiveCandy, MSGBOX_AUTOCLOSE
+	giveitem ITEM_RARE_CANDY, 30
+	msgbox PetalburgCity_Text_ScottGoodbye, MSGBOX_DEFAULT
+	closemessage
 	fadedefaultbgm
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
@@ -583,6 +591,10 @@ PetalburgCity_EventScript_StartScottBattleTorchic::
 
 PetalburgCity_EventScript_StartScottBattleMudkip::
 	trainerbattle_no_intro TRAINER_SCOTT_PETALBURG_MUDKIP, PetalburgCity_Text_ScottPostBattle
+	msgbox PetalburgCity_Text_ScottGiveCandy, MSGBOX_AUTOCLOSE
+	giveitem ITEM_RARE_CANDY, 30
+	msgbox PetalburgCity_Text_ScottGoodbye, MSGBOX_DEFAULT
+	closemessage
 	fadedefaultbgm
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
@@ -594,7 +606,14 @@ PetalburgCity_EventScript_StartScottBattleMudkip::
 
 PetalburgCity_Text_ScottPostBattle:
 	.string "What a battle! You might have what\n"
-	.string "it takes after all. See you later!$"
+	.string "it takes after all.$"
+
+PetalburgCity_Text_ScottGiveCandy:
+	.string "You should take these.$"
+
+PetalburgCity_Text_ScottGoodbye:
+	.string "I'm sure I'll see you around. Until\n"
+	.string "then, keep training hard!$"
 
 PetalburgCity_EventScript_ScottExit0::
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWatchScottExit0

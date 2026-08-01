@@ -18,7 +18,6 @@ ARGS = [
 
 TIME_OF_DAY_DEFAULT = 0
 
-
 def GetWildEncounterFile():
     if not os.path.exists("Makefile"):
         print("Please run this script from the project's root folder.")
@@ -29,6 +28,12 @@ def GetWildEncounterFile():
 
     config = Config('include/config/overworld.h', 'include/constants/rtc.h', wData)
     timeOfDay = config.times_of_day
+    # here
+    time_suffixes = [
+        timeOfDay["TIME_DAY"],
+        timeOfDay["TIME_NIGHT"],
+    ]
+    # here
 
 
     wBackupData = json.dumps(wData, indent=2)
@@ -51,7 +56,8 @@ def GetWildEncounterFile():
 
         wEncounters_New = list()
         for map in wEncounters:
-            for suffix in timeOfDay.values():
+            #for suffix in timeOfDay.values():
+            for suffix in time_suffixes:
                 tempSuffix = "_" + suffix
                 if tempSuffix in map["base_label"]:
                     editMap = False
@@ -61,7 +67,8 @@ def GetWildEncounterFile():
 
             if editMap:
                 k = 0
-                for suffix in timeOfDay.values():
+                #for suffix in timeOfDay.values():
+                for suffix in time_suffixes:
                     tempDict = dict()
                     if k == TIME_OF_DAY_DEFAULT or COPY_FULL_ENCOUNTER:
                         tempDict = map.copy()

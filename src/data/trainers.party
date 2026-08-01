@@ -234,8 +234,8 @@ Double Battle: No
 AI: Smart Trainer
 
 Poochyena (M) @ Lum Berry
-Level: 9
-Ability: Quick Feet
+Level: 10
+Ability: Intimidate
 Nature: Brave
 - Assurance
 - Bite
@@ -243,7 +243,7 @@ Nature: Brave
 - Ice Fang
 
 Carvanha (M) @ Loaded Dice
-Level: 9
+Level: 10
 Ability: Rough Skin
 Nature: Jolly
 - Aqua Jet
@@ -252,19 +252,19 @@ Nature: Jolly
 - Flip Turn
 
 Zubat (M) @ Lax Incense
-Level: 10
+Level: 11
 Ability: Infiltrator
 Nature: Hasty
 - Poison Fang
 - Bite
 - Leech Life
-- Dual Wingbeat
+- Wing Attack
 
-Stunky (M) @ Black Glasses
+Stunky (M) @ Black Sludge
 Level: 10
 Ability: Stench
 Nature: Gentle
-- Toxic
+- Poison Fang
 - Bite
 - Venoshock
 - Shadow Claw
@@ -2516,8 +2516,8 @@ Double Battle: No
 AI: Smart Trainer
 
 Growlithe (M) @ Metronome
-Level: 9
-Ability: Flash Fire
+Level: 10
+Ability: Intimidate
 Nature: Timid
 - Fire Fang
 - Thunder Fang
@@ -4746,56 +4746,56 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Force Setup First Turn / Stall
 
-Glimmet (F) @ Focus Sash
+Hippopotas (F) @ Soft Sand
 Level: 14
-Ability: Toxic Debris
-Nature: Hasty
-- Spikes
+Ability: Sand Stream
+Nature: Impish
 - Stealth Rock
-- Sandstorm
-- Acid Spray
+- Magnitude
+- Body Slam
+- Body Press
 
-Growlithe-Hisui (F) @ Passho Berry
+Carbink (F) @ Absorb Bulb
 Level: 13
-Ability: Intimidate
-Nature: Bold
-- Bite
-- Flame Wheel
-- Thunder Fang
-- Trailblaze
+Ability: Clear Body
+Nature: Quiet
+- Power Gem
+- Dazzling Gleam
+- Earth Power
+- Calm Mind
 
 Tyrunt (F) @ Expert Belt
-Level: 13
-Ability: Sturdy
-Nature: Modest
-- Dragon Breath
+Level: 14
+Ability: Strong Jaw
+Nature: Hardy
+- Dragon Claw
 - Rock Throw
 - Bite
 - Ice Fang
 
-Omanyte (F) @ Binding Band
+Lileep (F) @ Wise Glasses
 Level: 13
-Ability: Shell Armor
-Nature: Adamant
-- Aqua Jet
-- Whirlpool
-- Bind
+Ability: Poison Heal
+Nature: Hasty
+- Giga Drain
 - Ancient Power
+- Struggle Bug
+- Recover
 
-Geodude (F) @ Rindo Berry
-Level: 15
-Ability: Sturdy
-Nature: Sassy
-- Rock Tomb
-- Magnitude
-- Thunder Punch
-- Protect
+Anorith (F) @ Big Root
+Level: 14
+Ability: Battle Armor
+Nature: Jolly
+- Leech Life
+- Accelerock
+- Aqua Jet
+- Leaf Blade
 
 Nosepass (F) @ Leftovers
 Level: 16
-Ability: Sturdy
+Ability: Solid Rock
 Nature: Bold
-- Rock Tomb
+- Seismic Toss
 - Block
 - Protect
 - Toxic
@@ -5918,42 +5918,6 @@ Hariyama
 Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
-=== TRAINER_CALVIN ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Patrat (M) @ Blunder Policy
-Level: 7
-Ability: Keen Eye
-Nature: Careful
-- Tackle
-- Hypnosis
-- Bite
-- Super Fang
-
-Purrloin (M) @ Oran Berry
-Level: 7
-Ability: Limber
-Nature: Impish
-- Fake Out
-- Bite
-- Torment
-- Snarl
-
-Pidove (M) @ Razor Claw
-Level: 7
-Ability: Super Luck
-Nature: Gentle
-- Air Cutter
-- Quick Attack
-- Peck
-- Tailwind
-
 === TRAINER_KYLE ===
 Name: KYLE
 Class: Youngster
@@ -5963,9 +5927,43 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
+Patrat (M) @ Blunder Policy
+Level: 8
+Ability: Keen Eye
+Nature: Careful
+- Tackle
+- Psybeam
+- Bite
+- Super Fang
+
+Purrloin (M) @ Oran Berry
+Level: 8
+Ability: Limber
+Nature: Impish
+- Fake Out
+- Bite
+- Torment
+- Snarl
+
+Pidove (M) @ Razor Claw
+Level: 8
+Ability: Super Luck
+Nature: Gentle
+- Air Cutter
+- Tailwind
+
+=== TRAINER_CALVIN ===
+Name: CALVIN
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
 Poochyena (M) @ Muscle Band
 Level: 5
-Ability: Quick Feet
+Ability: Intimidate
 Nature: Sassy
 - Howl
 - Quick Attack
@@ -5978,15 +5976,15 @@ Nature: Relaxed
 - Sand Attack
 
 Taillow (M) @ Sharp Beak
-Level: 5
+Level: 6
 Ability: Guts
 Nature: Hardy
 - Quick Attack
 - Peck
 - Double Team
 
-=== TRAINER_MICHAEL ===
-Name: MICHAEL
+=== TRAINER_ALLEN ===
+Name: ALLEN
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6012,7 +6010,7 @@ Nature: Careful
 - Tackle
 
 Starly (M)
-Level: 6
+Level: 7
 Ability: Keen Eye
 Nature: Lonely
 - Quick Attack
@@ -6066,16 +6064,16 @@ Double Battle: No
 AI: Smart Trainer / Force Setup First Turn
 
 Roggenrola (M) @ Loaded Dice
-Level: 11
+Level: 12
 Ability: Sturdy
 Nature: Careful
 - Spikes
 - Rock Blast
 - Sandstorm
-- Bulldoze
+- Bullet Seed
 
 Onix (M) @ Lagging Tail
-Level: 10
+Level: 12
 Ability: Sturdy
 Nature: Adamant
 - Magnitude
@@ -6084,7 +6082,7 @@ Nature: Adamant
 - Aqua Tail
 
 Rolycoly (M) @ Shuca Berry
-Level: 12
+Level: 13
 Ability: Heatproof
 Nature: Impish
 - Rock Blast
@@ -6099,7 +6097,16 @@ Nature: Jolly
 - Mach Punch
 - Bulldoze
 - Rock Throw
-- Knock Off
+- Wood Hammer
+
+Beldum @ Metal Coat
+Level: 12
+Ability: Clear Body
+Nature: Relaxed
+- Take Down
+- Zen Headbutt
+- Iron Head
+- Iron Defense
 
 === TRAINER_TOMMY ===
 Name: TOMMY
@@ -6111,7 +6118,7 @@ Double Battle: No
 AI: Smart Trainer
 
 Diglett (M) @ Soft Sand
-Level: 11
+Level: 12
 Ability: Arena Trap
 Nature: Jolly
 - Magnitude
@@ -6120,7 +6127,7 @@ Nature: Jolly
 - Iron Head
 
 Aron (M) @ Shuca Berry
-Level: 12
+Level: 13
 Ability: Sturdy
 Nature: Gentle
 - Iron Head
@@ -6129,7 +6136,7 @@ Nature: Gentle
 - Zen Headbutt
 
 Dwebble (M) @ Hard Stone
-Level: 11
+Level: 12
 Ability: Shell Armor
 Nature: Sassy
 - Bug Bite
@@ -6147,7 +6154,7 @@ Nature: Relaxed
 - Metal Claw
 
 Bonsly (M) @ Choice Scarf
-Level: 11
+Level: 12
 Ability: Rock Head
 Nature: Timid
 - Double-Edge
@@ -6287,8 +6294,8 @@ Zigzagoon
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ALLEN ===
-Name: ALLEN
+=== TRAINER_MICHAEL ===
+Name: MICHAEL
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6297,7 +6304,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Bunnelby (M) @ Liechi Berry
-Level: 7
+Level: 8
 Ability: Cheek Pouch
 Nature: Hasty
 - Quick Attack
@@ -6306,7 +6313,7 @@ Nature: Hasty
 - Endure
 
 Litleo (M) @ Destiny Knot
-Level: 8
+Level: 9
 Ability: Rivalry
 Nature: Quirky
 - Work Up
@@ -6430,8 +6437,8 @@ Double Battle: No
 AI: Smart Trainer
 
 Wiglett (M) @ Sticky Barb
-Level: 10
-Ability: Gooey
+Level: 11
+Ability: Water Absorb
 Nature: Hasty
 - Aqua Jet
 - Sucker Punch
@@ -6439,7 +6446,7 @@ Nature: Hasty
 - Liquidation
 
 Feebas (M) @ Damp Rock
-Level: 11
+Level: 12
 Ability: Swift Swim
 Nature: Modest
 - Rain Dance
@@ -6448,7 +6455,7 @@ Nature: Modest
 - Ice Beam
 
 Magikarp (M) @ Mystic Water
-Level: 12
+Level: 13
 Ability: Swift Swim
 Nature: Serious
 - Splash
@@ -10689,12 +10696,12 @@ Level: 12
 Ability: Guts
 Nature: Sassy
 - Facade
-- Rock Tomb
+- Accelerock
 - Magnitude
 - Protect
 
 Amaura (M) @ Chople Berry
-Level: 11
+Level: 13
 Ability: Refrigerate
 Nature: Bashful
 - Icy Wind
@@ -10703,7 +10710,7 @@ Nature: Bashful
 - Thunder Wave
 
 Farfetch'D (M) @ Leek
-Level: 11
+Level: 12
 Ability: Super Luck
 Nature: Timid
 - Wing Attack
@@ -10712,7 +10719,7 @@ Nature: Timid
 - Bone Rush
 
 Wooper-Paldea (M) @ Poison Barb
-Level: 12
+Level: 13
 Ability: Water Absorb
 Nature: Brave
 - Poison Tail
@@ -11245,7 +11252,7 @@ Shroomish (F) @ Coba Berry
 Level: 8
 Ability: Poison Heal
 Nature: Brave
-- Spore
+- Trailblaze
 - Mach Punch
 - Headbutt
 - Pounce
@@ -11269,7 +11276,7 @@ Nature: Serious
 - Bulldoze
 
 Capsakid (F) @ Rose Incense
-Level: 10
+Level: 11
 Ability: Insomnia
 Nature: Rash
 - Razor Leaf
@@ -11285,7 +11292,7 @@ Nature: Gentle
 - Magical Leaf
 
 Cherubi (F) @ Focus Sash
-Level: 10
+Level: 11
 Ability: Chlorophyll
 Nature: Jolly
 - Sunny Day
@@ -11400,19 +11407,17 @@ AI: Basic Trainer
 
 Wurmple (M) @ Silver Powder
 Level: 8
-Ability: Shield Dust
+Ability: Poison Point
 Nature: Jolly
 - Bug Bite
 - String Shot
 - Poison Sting
-- Tackle
 
 Nincada (M) @ Bright Powder
 Level: 8
 Ability: Compound Eyes
 Nature: Calm
 - Bug Bite
-- Harden
 - Dig
 - Sand Attack
 
@@ -11427,7 +11432,7 @@ Nature: Bold
 
 Cascoon (M) @ Berry Juice
 Level: 7
-Ability: Shed Skin
+Ability: Poison Point
 Nature: Bold
 - Bug Bite
 - Harden
@@ -11445,7 +11450,7 @@ AI: Smart Trainer
 
 Spewpa (M) @ Leftovers
 Level: 10
-Ability: Shed Skin
+Ability: Shield Dust
 Nature: Careful
 - Bug Bite
 - Infestation
@@ -11453,7 +11458,7 @@ Nature: Careful
 - Iron Defense
 
 Dottler (M) @ Rock Incense
-Level: 10
+Level: 9
 Ability: Compound Eyes
 Nature: Quiet
 - Bug Bite
@@ -11477,7 +11482,7 @@ Nature: Bashful
 - Bug Bite
 - Razor Leaf
 - Slash
-- Brine
+- Protect
 
 === TRAINER_JOSE ===
 Name: JOSE
@@ -11553,16 +11558,16 @@ Double Battle: No
 AI: Smart Trainer
 
 Butterfree (M) @ Charti Berry
-Level: 8
+Level: 9
 Ability: Tinted Lens
-Nature: Adamant
+Nature: Timid
 - Magical Leaf
 - Psybeam
 - Bug Bite
 - Air Cutter
 
 Beedrill (M) @ King's Rock
-Level: 8
+Level: 9
 Ability: Swarm
 Nature: Calm
 - Twineedle
@@ -11571,18 +11576,18 @@ Nature: Calm
 - Double Hit
 
 Dustox (M) @ Black Sludge
-Level: 8
+Level: 9
 Ability: Shield Dust
-Nature: Impish
+Nature: Bold
 - Poison Powder
 - Psybeam
 - Venoshock
 - Silver Wind
 
 Beautifly (M) @ Big Root
-Level: 8
-Ability: Swarm
-Nature: Careful
+Level: 9
+Ability: Tinted Lens
+Nature: Quiet
 - Draining Kiss
 - Air Cutter
 - Bug Bite
@@ -13136,7 +13141,7 @@ Nature: Calm
 - Flail
 
 Azurill (M) @ Muscle Band
-Level: 10
+Level: 9
 Ability: Huge Power
 Nature: Timid
 - Slam
@@ -17048,7 +17053,7 @@ Double Battle: No
 AI: Smart Trainer / HP Aware
 
 Pikipek (M) @ Loaded Dice
-Level: 9
+Level: 8
 Ability: Keen Eye
 Nature: Naive
 - Pluck
@@ -17067,12 +17072,12 @@ Nature: Sassy
 
 Barboach (M) @ Assault Vest
 Level: 9
-Ability: Anticipation
+Ability: Unaware
 Nature: Rash
 - Mud-Slap
 - Water Pulse
 - Magnitude
-- Icy Wind
+- Icicle Spear
 
 Tepig (M) @ Leftovers
 Level: 10
@@ -17086,7 +17091,7 @@ Nature: Gentle
 Stufful (M) @ Expert Belt
 Level: 10
 Ability: Cute Charm
-Nature: Adamant
+Nature: Serious
 - Brutal Swing
 - Stomp
 - Bulldoze
@@ -17101,7 +17106,7 @@ Double Battle: No
 AI: Smart Trainer / HP Aware
 
 Pikipek (M) @ Loaded Dice
-Level: 9
+Level: 8
 Ability: Keen Eye
 Nature: Naive
 - Pluck
@@ -17139,7 +17144,7 @@ Nature: Gentle
 Stufful (M) @ Expert Belt
 Level: 10
 Ability: Cute Charm
-Nature: Adamant
+Nature: Serious
 - Brutal Swing
 - Stomp
 - Bulldoze
@@ -17154,7 +17159,7 @@ Double Battle: No
 AI: Smart Trainer / HP Aware
 
 Pikipek (M) @ Loaded Dice
-Level: 9
+Level: 8
 Ability: Keen Eye
 Nature: Naive
 - Pluck
@@ -17173,12 +17178,12 @@ Nature: Sassy
 
 Barboach (M) @ Assault Vest
 Level: 9
-Ability: Anticipation
+Ability: Unaware
 Nature: Rash
 - Mud-Slap
 - Water Pulse
 - Magnitude
-- Icy Wind
+- Icicle Spear
 
 Rhyhorn (M) @ Leftovers
 Level: 9
@@ -17192,7 +17197,7 @@ Nature: Gentle
 Stufful (M) @ Expert Belt
 Level: 10
 Ability: Cute Charm
-Nature: Adamant
+Nature: Serious
 - Brutal Swing
 - Stomp
 - Bulldoze

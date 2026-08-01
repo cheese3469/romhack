@@ -202,7 +202,7 @@ PetalburgCity_Gym_EventScript_NormanGiftSouth::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
+	givemon VAR_NORMAN_GIFT_MON, 10, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
 	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
@@ -215,7 +215,7 @@ PetalburgCity_Gym_EventScript_NormanGiftNorth::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
+	givemon VAR_NORMAN_GIFT_MON, 10, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
 	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary
@@ -228,7 +228,7 @@ PetalburgCity_Gym_EventScript_NormanGiftWest::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	msgbox PetalburgCity_Gym_Text_DadGift, MSGBOX_DEFAULT
 	getrandomspecies VAR_NORMAN_GIFT_MON, SPECIES_GENERATOR_NORMAN_GIFT
-	givemon VAR_NORMAN_GIFT_MON, 10, item=ITEM_SILK_SCARF, ball=BALL_NEST, abilityNum=2
+	givemon VAR_NORMAN_GIFT_MON, 10, ball=BALL_NEST, abilityNum=2
 	playfanfare MUS_LEVEL_UP
 	waitfanfare
 	call_if_eq VAR_NORMAN_GIFT_MON, SPECIES_BUNEARY, PetalburgCity_Gym_EventScript_NormanBuneary

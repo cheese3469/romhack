@@ -227,9 +227,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_StartBrendanBattleMudkip::
 LittlerootTown_ProfessorBirchsLab_EventScript_AfterRivalBattle::
  	msgbox LittlerootTown_ProfessorBirchsLab_Text_RivalGift, MSGBOX_DEFAULT
 	waitmessage
-	giveitem ITEM_POKE_BALL, 20
-	giveitem ITEM_GREAT_BALL, 5
-	giveitem ITEM_RARE_CANDY, 25
+	giveitem ITEM_RARE_CANDY, 40
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_RivalLeave, MSGBOX_DEFAULT
 	closemessage
     applymovement LOCALID_BIRCHS_LAB_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalExit
